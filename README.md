@@ -1,3 +1,7 @@
+Attempt to migrate to modern C3 architecture
+
+
+
 # esphome-hmlgw
 
 This is a component for ESPHome that allows to emulate a Homematic LAN gateway
