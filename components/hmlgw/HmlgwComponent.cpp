@@ -21,6 +21,7 @@
 #include "esphome/core/log.h"
 #include "esphome/core/util.h"
 #include "esphome/core/helpers.h"
+#include <WiFi.h>
 #if ESPHOME_VERSION_CODE >= VERSION_CODE(2021, 10, 0)
 #include "esphome/components/network/util.h"
 #endif
@@ -473,18 +474,10 @@ void HmlgwComponent::send_bidcos_frame(uint8_t counter, uint8_t destination, uin
 void HmlgwComponent::dump_config() {
     ESP_LOGCONFIG(TAG, "HMLGW Server:");
     ESP_LOGCONFIG(TAG, "  Address: %s:%u",
-#if ESPHOME_VERSION_CODE >= VERSION_CODE(2021, 10, 0)
-                  esphome::network::get_ip_address().str().c_str(),
-#else
-                  network_get_address().c_str(),
-#endif
+                  WiFi.localIP().toString().c_str(),
                   this->port_);
     ESP_LOGCONFIG(TAG, "  KeepAlive: %s:%u",
-#if ESPHOME_VERSION_CODE >= VERSION_CODE(2021, 10, 0)
-                  esphome::network::get_ip_address().str().c_str(),
-#else
-                  network_get_address().c_str(),
-#endif
+                  WiFi.localIP().toString().c_str(),
                   this->keepalive_port_);
 }
 
