@@ -473,7 +473,7 @@ void HmlgwComponent::send_bidcos_frame(uint8_t counter, uint8_t destination, uin
 
 void HmlgwComponent::dump_config() {
     ESP_LOGCONFIG(TAG, "HMLGW Server:");
-    ESP_LOGCONFIG(TAG, "  Address_new: %s:%u",
+    ESP_LOGCONFIG(TAG, "  Address: %s:%u",
                   WiFi.localIP().toString().c_str(),
                   this->port_);
     ESP_LOGCONFIG(TAG, "  KeepAlive: %s:%u",
