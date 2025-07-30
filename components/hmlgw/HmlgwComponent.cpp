@@ -486,6 +486,7 @@ void HmlgwComponent::dump_config() {
                   network_get_address().c_str(),
 #endif
                   this->keepalive_port_);
+    ESP_LOGCONFIG(TAG, "  HM-MOD Serial: %s", this->hm_serial_.c_str());
 }
 
 void HmlgwComponent::on_shutdown() {
