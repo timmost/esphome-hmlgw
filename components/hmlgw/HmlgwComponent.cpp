@@ -479,6 +479,7 @@ void HmlgwComponent::dump_config() {
     ESP_LOGCONFIG(TAG, "  KeepAlive: %s:%u",
                   WiFi.localIP().toString().c_str(),
                   this->keepalive_port_);
+    ESP_LOGCONFIG(TAG, "  HM-MOD Serial: %s", this->hm_serial_.c_str());
 }
 
 void HmlgwComponent::on_shutdown() {
